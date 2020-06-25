@@ -1,0 +1,67 @@
+{
+  "name": "mit-license-generator",
+  "displayName": "MIT_LICENSE_Generator",
+  "description": "Generate MIT LICENSE",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.46.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:mit-license-generator.generate"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "%configuration.title%",
+      "properties": {
+        "mit-license-generator.name": {
+          "type": "string",
+          "default": "Name",
+          "description": "Your Name to put in LICENSE"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "mit-license-generator.generate",
+        "title": "Generate LICENSE"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "mit-license-generator.generate",
+          "when": "explorerResourceIsFolder"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "lint": "eslint src --ext ts",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.1",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^13.11.0",
+    "@types/vscode": "^1.46.0",
+    "glob": "^7.1.6",
+    "mocha": "^7.1.2",
+    "typescript": "^3.8.3",
+    "vscode-test": "^1.3.0"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.4.0",
+    "@typescript-eslint/parser": "^3.4.0",
+    "eslint": "^7.3.1",
+    "eslint-config-google": "^0.14.0"
+  }
+}
