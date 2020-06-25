@@ -1,7 +1,17 @@
 {
   "name": "mit-license-generator",
-  "displayName": "MIT_LICENSE_Generator",
+  "displayName": "MIT Licensemi Generator",
   "description": "Generate MIT LICENSE",
+  "author": {
+    "name": "Mateus Henrique Nascimento Soares",
+    "email": "mateushenreiquensoares@gmail.com",
+    "url": "https://github.com/MateusSoares895"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MateusSoares895/vscode-mit-license-generator"
+  },
+  "icon": "icon.png",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.46.0"
@@ -13,6 +23,7 @@
     "onCommand:mit-license-generator.generate"
   ],
   "main": "./dist/extension.js",
+  "publisher": "MateusHenriqueNascimentoSoares",
   "contributes": {
     "configuration": {
       "type": "object",
@@ -40,11 +51,6 @@
       ]
     }
   },
-  "scripts": {
-    "vscode:prepublish": "yarn run compile",
-    "compile": "tsc",
-    "watch": "tsc -watch -p ./"
-  },
   "devDependencies": {
     "@commitlint/cli": "^9.0.1",
     "@commitlint/config-conventional": "^9.0.1",
@@ -56,9 +62,7 @@
     "husky": "^4.2.5",
     "mocha": "^7.1.2",
     "typescript": "^3.8.3",
-    "vscode-test": "^1.3.0"
-  },
-  "dependencies": {
+    "vscode-test": "^1.3.0",
     "vscode": "^1.1.37"
   }
 }
